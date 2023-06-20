@@ -3,3 +3,33 @@ app:
   http_port: 8080
   read_timeout: 30
   write_timeout: 30
+
+redis:
+  base:
+    host: 127.0.0.1
+    port: 6379
+    auth:
+    db: 0
+    pool_size: 3
+    min_idle_conns: 1
+    connect_timeout: 1s
+    idle_timeout: 3600s
+    write_timeout: 1200ms
+    read_timeout: 100ms
+
+mysql:
+  base:
+    database: yipay
+    addr: 123.207.6.107:3306
+    user: root
+    password: easy-pay
+    max_idle_conns: 1
+    max_open_conns: 3
+    conn_max_life_time: 1
+    conn_timeout: 3s
+    write_timeout: 1500ms
+    read_timeout: 1500ms
+    log_mod: true
+    log_level: INFO
+    ignore_record_not_found_error: true
+    slow_threshold: 1s

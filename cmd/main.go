@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"npp-channel-gw/app/pkg/db"
 	"npp-channel-gw/router"
 	"os"
 
@@ -25,15 +26,8 @@ func main() {
 
 	client.AddDefaultWrappers(wrapper.HttpClientTrace)
 
-	// db.InitMysql()
-	// db.InitRedis()
-	// db.InitLocalCache()
-	// middleware.InitValidatorTranslate()
-	// snow.InitSnowFlake()
-	// conf.InitConfig()
-	// ip.Init()
-	// bigquery.InitBigQuery()
-	//queue.InitGProducerConf() //发MQ消息必须先加载配置
+	db.InitMysql()
+	db.InitRedis()
 
 	// register route and init server
 	router := router.InitRouter()
